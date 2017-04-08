@@ -1,0 +1,41 @@
+textarea{
+  border:1px solid #999999;
+  width:700px;
+  margin:5px 0;
+  padding:3px;
+  font-family: inherit;
+  font-size: 14pt;
+}
+
+body{
+  margin-left: 20px;
+  font-family: inherit;
+  font-size: 14pt;
+}
+
+p{
+  font-family: inherit;
+  font-size: 14pt;
+}
+
+input[type=submit]{
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px #999;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    margin: 4px 2px 4px 25px;
+    outline: none;
+    padding: 0px 2px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.2s;
+    font-family: inherit;
+    font-size: 14pt;
+}
+
+input[type=checkbox]{
+    transform: scale(1.5);
+}

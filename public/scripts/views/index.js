@@ -1,1 +1,0 @@
-GET_USER.then(console.log);

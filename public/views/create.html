@@ -10,19 +10,22 @@
 </head>
 
 <body>
-    <h1>Reading Fluency Activity Creator</h1>
+    <h1>Reading Passage Creator</h1>
     <p>Use the fields below to create a reading passage.</p>
     <p>
         <b>Title</b> - Choose a unique title. This is what will be used to retreive your reading activity. <i>Ex. Corduroy S17</i><br>
-        <input type="text" name="title">
+        <input type="text" name="title" value="ロン">
     </p>
     <p>
         <b>Reading Passage</b><br>
-        <textarea name="content" rows="15"></textarea>
+        <textarea name="content" rows="15">初顔合わせと、「」。。、 ...</textarea>
     </p>
     <p>Select for Japanese text
         <input type="checkbox" name="is-japanese" checked><input type="submit" value="Save">
     </p>
+    <script src="//www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+    <script src="/scripts/helpers/firebase-connector.js"></script>
+    <script src="/scripts/helpers/user.js"></script>
     <script src="/scripts/views/create.js"></script>
 </body>
 

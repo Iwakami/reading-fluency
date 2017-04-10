@@ -1,0 +1,6 @@
+a{
+    display: block;
+}
+a+a{
+    margin-top: 15px;
+}

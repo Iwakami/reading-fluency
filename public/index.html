@@ -6,18 +6,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Reading Fluency Solutions</title>
+  <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link rel="stylesheet" href="/styles/views/index.css">
 </head>
 
 <body>
-  <h1>Reading Fluency Solutions</h1>
-  <section>
-    <a id="button-1" class="button" href="/list-passages">Start Reading!</a>
-    <a id="button-2" class="button" href="/create-passage">Create a Reading Passage</a>
-  </section>
-  <script src="//www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+  <header>
+    <nav class="nav-wrapper">
+      <a href="/" class="brand-logo center">Reading Fluency Solutions</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="left hide-on-med-and-down">
+        <li>
+          <a href="/list-passages">Start Reading</a>
+        </li>
+        <li>
+          <a href="/create-passage">Create Reading</a>
+        </li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li>
+          <a href="/list-passages">Start Reading</a>
+        </li>
+        <li>
+          <a href="/create-passage">Create Reading</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/read.jpg">
+              <span class="card-title">Read</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light blue" href="/list-passages">
+                <i class="material-icons">translate</i>
+              </a>
+            </div>
+            <div class="card-content">
+              <p>Test your reading skills!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/create.jpg">
+              <span class="card-title">Create</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light blue-green" href="/create-passage">
+                <i class="material-icons">add</i>
+              </a>
+            </div>
+            <div class="card-content">
+              <p>Create a reading passage.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About</h5>
+          <p class="grey-text text-lighten-4">This is some about text</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li>
+              <a class="grey-text text-lighten-3" href="https://github.com/coderfin/reading-fluency">Download the code</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      </div>
+    </div>
+  </footer>
+  <script src="//www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
   <script src="/scripts/helpers/firebase-connector.js"></script>
+  <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="/scripts/helpers/user.js"></script>
+  <script src="/scripts/views/index.js"></script>
 </body>
 
 </html>

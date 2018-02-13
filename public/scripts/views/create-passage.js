@@ -24,11 +24,11 @@ let getPassageTotals = (segmentsString) => {
 let getSegments = (passage) => {
   return new Promise((resolve, reject) => {
     fetch("//web.ics.purdue.edu/~peter438/rfs/api.php/segment", {
-        method: "POST",
-        body: JSON.stringify({
-          text: passage
-        })
+      method: "POST",
+      body: JSON.stringify({
+        text: passage
       })
+    })
       .then(response => response.json())
       .then(json => {
         resolve(json.segments);
@@ -36,10 +36,17 @@ let getSegments = (passage) => {
   });
 };
 
-document.querySelector("input[type=submit]").addEventListener("click", () => {
-  let title = document.querySelector("input[name=title]").value;
-  let passage = document.querySelector("textarea[name=content]").value;
-  let isJapanese = document.querySelector("input[type=checkbox]").checked;
+document.querySelector("button[type=submit]").addEventListener("click", (event) => {
+  event.preventDefault();
+
+  document.querySelector("#success").classList.add("hide");
+  let spinner = document.querySelector("#spinner");
+
+  spinner.classList.add("active");
+
+  let title = document.querySelector("#title").value;
+  let passage = document.querySelector("#passage").value;
+  let isJapanese = document.querySelector("#is-japanese").checked;
 
   Promise.all([GET_USER, getSegments(passage)])
     .then(([user, segments]) => {
@@ -55,6 +62,12 @@ document.querySelector("input[type=submit]").addEventListener("click", () => {
         passage,
         isJapanese,
         totals
+      });
+
+      dbPassage.on("value", (data) => {
+        document.querySelector("#form").reset();
+        document.querySelector("#success").classList.remove("hide");
+        spinner.classList.remove("active");
       });
     });
 });

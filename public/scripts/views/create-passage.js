@@ -9,7 +9,7 @@ let getPassageTotals = (segmentsString) => {
       totalWords++;
       let wordParts = word.split("\t");
       totalCharacters += wordParts[0].length;
-      totalMorae += wordParts[1].length;
+      totalMorae += wordParts[1].length; // TODO: ignore small ゃ ゅ ょ
 
     }
   });

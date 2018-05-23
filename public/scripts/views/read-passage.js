@@ -51,6 +51,6 @@ document.querySelector("#stop").addEventListener("click", (event) => {
     stats.appendChild(wordsPerMinuteElement);
 
     let moraePerMinuteElement = document.createElement("div");
-    moraePerMinuteElement.textContent = `Total Word Count: ${Math.trunc(passageObject.totals.morae/totalMinutes)}`;
+    moraePerMinuteElement.textContent = `Morae/Minute: ${Math.trunc(passageObject.totals.morae/totalMinutes)}`;
     stats.appendChild(moraePerMinuteElement);
 });

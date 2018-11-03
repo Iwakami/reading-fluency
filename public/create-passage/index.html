@@ -5,27 +5,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Reading Passage Creator</title>
-    <link rel="stylesheet" href="/styles/views/create-passage.css">
+    <title>Reading Fluency Solutions</title>
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="/styles/views/index.css">
 </head>
 
 <body>
-    <h1>Reading Passage Creator</h1>
-    <p>Use the fields below to create a reading passage.</p>
-    <p>
-        <b>Title</b> - Choose a unique title. This is what will be used to retreive your reading activity. <i>Ex. Corduroy S17</i><br>
-        <input type="text" name="title">
-    </p>
-    <p>
-        <b>Reading Passage</b><br>
-        <textarea name="content" rows="15"></textarea>
-    </p>
-    <p>Select for Japanese text
-        <input type="checkbox" name="is-japanese" checked><input type="submit" value="Save">
-    </p>
-    <script src="//www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+    <header>
+        <nav class="nav-wrapper">
+            <a href="/" class="brand-logo center">Reading Fluency Solutions</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="left hide-on-med-and-down">
+                <li>
+                    <a href="/list-passages">Start Reading</a>
+                </li>
+                <li>
+                    <a href="/create-passage">Create Reading</a>
+                </li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li>
+                    <a href="/list-passages">Start Reading</a>
+                </li>
+                <li>
+                    <a href="/create-passage">Create Reading</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="section col s12 m9 l10">
+                    <h1>Reading Passage Creator</h1>
+                    <form id="form" class="col s12">
+                        <div id="success" class="row hide">
+                            <div class="col s12 m4 l5 teal white-text">
+                                <p>The passage has successfully been saved.</p>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="Ex. Corduroy S17" id="title" type="text" class="validate">
+                                <label for="title">Title</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="passage" class="materialize-textarea"></textarea>
+                                <label for="textarea1">Reading Passage</label>
+                            </div>
+                        </div>
+                        <div class="switch">
+                            <label>
+                                <input id="is-japanese" type="checkbox" checked>
+                                <span class="lever"></span>
+                                Is Japanese
+                            </label>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="input-field col s12 m2">
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Create
+                                    <i class="material-icons right">add</i>
+                                </button>
+                            </div>
+                            <div class="input-field col s12 m1 center">
+                                <div id="spinner" class="preloader-wrapper small">
+                                    <div class="spinner-layer spinner-blue">
+                                        <div class="circle-clipper left">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="gap-patch">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="circle-clipper right">
+                                            <div class="circle"></div>
+                                        </div>
+                                    </div>
+                                    <div class="spinner-layer spinner-red">
+                                        <div class="circle-clipper left">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="gap-patch">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="circle-clipper right">
+                                            <div class="circle"></div>
+                                        </div>
+                                    </div>
+                                    <div class="spinner-layer spinner-yellow">
+                                        <div class="circle-clipper left">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="gap-patch">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="circle-clipper right">
+                                            <div class="circle"></div>
+                                        </div>
+                                    </div>
+                                    <div class="spinner-layer spinner-green">
+                                        <div class="circle-clipper left">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="gap-patch">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="circle-clipper right">
+                                            <div class="circle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">About</h5>
+                    <p class="grey-text text-lighten-4">This is some about text</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="https://github.com/coderfin/reading-fluency">Download the code</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container"></div>
+        </div>
+    </footer>
+    <script src="//www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
     <script src="/scripts/helpers/firebase-connector.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.10/URI.min.js"></script>
     <script src="/scripts/helpers/user.js"></script>
+    <script src="/scripts/views/index.js"></script>
     <script src="/scripts/views/create-passage.js"></script>
 </body>
 

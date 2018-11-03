@@ -11,11 +11,19 @@ dbPassage.on("value", (data) => {
 let startTime = null;
 let stopTime = null;
 
-document.querySelector("#start").addEventListener("click", () => {
+document.querySelector("#start").addEventListener("click", (event) => {
     startTime = Date.now();
+    event.target.classList.add("hide");
+    document.querySelector("#stop").classList.remove("hide");
+    document.querySelector("#card").classList.add("hide");
+    document.querySelector("#stats").textContent = "";
 });
 
-document.querySelector("#stop").addEventListener("click", () => {
+document.querySelector("#stop").addEventListener("click", (event) => {
+    event.target.classList.add("hide");
+    document.querySelector("#start").classList.remove("hide");
+    document.querySelector("#card").classList.remove("hide");
+
     stopTime = Date.now();
     let totalTime = moment(moment.duration(stopTime - startTime)._data).format("m:ss:SSS");
     document.querySelector("#total-time").textContent = `Your time: ${totalTime}`;
@@ -35,14 +43,14 @@ document.querySelector("#stop").addEventListener("click", () => {
     stats.appendChild(totalMoraCountElement);
 
     let charactersPerMinuteElement = document.createElement("div");
-    charactersPerMinuteElement.textContent = `Characters Per Minute: ${passageObject.totals.characters/totalMinutes}`;
+    charactersPerMinuteElement.textContent = `Characters/Minute: ${Math.trunc(passageObject.totals.characters/totalMinutes)}`;
     stats.appendChild(charactersPerMinuteElement);
 
     let wordsPerMinuteElement = document.createElement("div");
-    wordsPerMinuteElement.textContent = `Words Per Minute: ${passageObject.totals.words/totalMinutes}`;
+    wordsPerMinuteElement.textContent = `Words/Minute: ${Math.trunc(passageObject.totals.words/totalMinutes)}`;
     stats.appendChild(wordsPerMinuteElement);
 
     let moraePerMinuteElement = document.createElement("div");
-    moraePerMinuteElement.textContent = `Total Word Count: ${passageObject.totals.morae/totalMinutes}`;
+    moraePerMinuteElement.textContent = `Morae/Minute: ${Math.trunc(passageObject.totals.morae/totalMinutes)}`;
     stats.appendChild(moraePerMinuteElement);
 });

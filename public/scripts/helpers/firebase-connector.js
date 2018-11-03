@@ -1,9 +1,10 @@
  firebase.initializeApp({
-    apiKey: "AIzaSyDrZ5EBPkpfWR8Au04ryctF6TpaYlMTaxA",
-    authDomain: "reading-fluency-solutions.firebaseapp.com",
-    databaseURL: "https://reading-fluency-solutions.firebaseio.com",
-    storageBucket: "reading-fluency-solutions.appspot.com",
-    messagingSenderId: "149403343286"
-});
+    apiKey: "AIzaSyB0w_1jiK7Tvz9kILmXl_bZCZBcL3Suafc",
+    authDomain: "reading-fluency-solution.firebaseapp.com",
+    databaseURL: "https://reading-fluency-solution.firebaseio.com",
+    projectId: "reading-fluency-solution",
+    storageBucket: "reading-fluency-solution.appspot.com",
+    messagingSenderId: "671725665331"
+  });
 
 let db = firebase.database();
